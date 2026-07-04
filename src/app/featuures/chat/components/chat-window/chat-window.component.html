@@ -1,0 +1,107 @@
+@if(chatStore.selectedConversation(); as conversation){
+
+<div class="chat-header">
+
+    <img
+        [src]="conversation.customer.image"
+        width="45"
+        height="45">
+
+    <div>
+
+        <h3>{{conversation.customer.name}}</h3>
+
+        <small>{{conversation.channel}}</small>
+
+    </div>
+
+</div>
+
+<div class="messages"  #messageContainer>
+
+  @for(message of conversation.messages; track message.id){
+
+    <div
+      class="message-wrapper"
+      [class.user-wrapper]="message.sender==='user'"
+      [class.ai-wrapper]="message.sender==='ai'">
+
+      <div
+        class="message"
+        [class.user]="message.sender==='user'"
+        [class.ai]="message.sender==='ai'">
+
+        {{message.text}}
+
+        <div class="time">
+          {{message.timestamp | date:'shortTime'}}
+        </div>
+
+      </div>
+
+    </div>
+
+  }
+
+</div>
+
+
+@if(chatStore.typing()){
+
+<div class="typing">
+
+    AI is typing...
+
+</div>
+
+}
+
+<div class="chat-input">
+
+    <input
+        [(ngModel)]="message"
+(ngModelChange)="saveDraft()"
+        placeholder="Type a message...">
+<button
+    (click)="startVoice()"
+    [disabled]="isRecording">
+
+    {{ isRecording ? '🎙️' : '🎤' }}
+
+</button>
+
+<button (click)="sendMessage()">
+
+Send
+
+</button>
+
+ <!-- <button (click)="sendMessage()">
+        Send
+    </button> -->
+
+    <!-- Speech Controls -->
+    <button (click)="pauseSpeech()">
+        ⏸
+    </button>
+
+    <button (click)="resumeSpeech()">
+        ▶
+    </button>
+
+    <button (click)="stopSpeech()">
+        ⏹
+    </button>
+
+</div>
+
+}
+@else {
+
+<div class="empty">
+
+    <h2>Select a conversation</h2>
+
+</div>
+
+}

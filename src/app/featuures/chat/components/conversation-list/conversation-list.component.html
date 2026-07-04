@@ -1,0 +1,68 @@
+<div class="sidebar">
+
+  <h2>Conversations</h2>
+
+  <input
+    type="text"
+    placeholder="Search conversations..."
+    (input)="onSearch($event)"
+  />
+
+  @for (conversation of chatStore.filteredConversations(); track conversation.id) {
+
+    <div
+      class="conversation-card"
+      (click)="selectConversation(conversation)"
+      [class.active]="chatStore.selectedConversation()?.id === conversation.id">
+
+      <!-- Avatar -->
+      <img
+        [src]="conversation.customer.image"
+        [alt]="conversation.customer.name"
+      />
+
+      <!-- Details -->
+      <div class="details">
+
+        <div class="header">
+
+          <h4>{{ conversation.customer.name }}</h4>
+
+          <small>
+            {{ conversation.lastMessageTime | date:'shortTime' }}
+          </small>
+
+        </div>
+
+        <p>{{ conversation.lastMessage }}</p>
+
+        <div class="footer">
+
+          <span class="channel">
+            {{ conversation.channel }}
+          </span>
+
+          @if (conversation.unreadCount > 0) {
+            <span class="badge">
+              {{ conversation.unreadCount }}
+            </span>
+          }
+
+        </div>
+
+      </div>
+
+      <!-- Pin Button -->
+      <button
+        class="pin-btn"
+        (click)="togglePin(conversation); $event.stopPropagation()">
+
+        {{ conversation.pinned ? '📌' : '📍' }}
+
+      </button>
+
+    </div>
+
+  }
+
+</div>

@@ -1,27 +1,282 @@
-# OmnichannelChatConsole
+# Omnichannel AI Chat Console
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.4.
+A simplified **Omnichannel Customer Communication Platform** built with **Angular 19**, allowing customer support agents to manage conversations from multiple communication channels within a single interface.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# 🚀 Tech Stack
 
-## Code scaffolding
+- Angular 19
+- TypeScript
+- Angular Signals
+- RxJS
+- IndexedDB (Dexie)
+- DummyJSON API
+- Web Speech API
+- HTML5
+- CSS3
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+# 📌 Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## ✅ Omnichannel Chat Dashboard
 
-## Running unit tests
+- Conversation List
+- Chat Window
+- Customer Details Panel
+- Multiple Channels
+  - WhatsApp
+  - Instagram
+  - Facebook
+  - Website Live Chat
+  - Email
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## ✅ Conversation Features
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Search Conversations
+- Switch Between Conversations
+- Message Timestamps
+- Typing Indicator
+- Auto Scroll
+- Draft Message Auto Save
+- Pinned Conversations
+- Unread Message Count
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## ✅ AI Chat Integration
+
+Integrated with DummyJSON APIs.
+
+API Used:
+
+- https://dummyjson.com/users
+- https://dummyjson.com/comments
+
+Features:
+
+- Send Message
+- Receive AI Response
+- AI Streaming Response (Character by Character)
+- Auto Scroll During Streaming
+
+---
+
+## ✅ Voice Features
+
+### Voice to Text
+
+- Start Recording
+- Stop Recording
+- Live Speech Recognition
+- Automatically Convert Speech to Text
+
+### Text to Speech
+
+- Play AI Response
+- Pause Speech
+- Resume Speech
+- Stop Speech
+
+---
+
+## ✅ Offline Storage
+
+Implemented using **IndexedDB (Dexie)**.
+
+Stored Data
+
+- Conversations
+- Messages
+- Draft Messages
+- Pinned Chats
+- Unread Counts
+
+Data is automatically restored after page refresh.
+
+---
+
+## ✅ Responsive Design
+
+Supports
+
+- Desktop
+- Tablet
+- Mobile
+
+---
+
+# 📂 Project Structure
+
+```
+src
+│
+├── app
+│
+├── core
+│   ├── services
+│   ├── storage
+│   ├── guards
+│   └── interceptors
+│
+├── features
+│   └── chat
+│       ├── components
+│       ├── models
+│       ├── pages
+│       ├── services
+│       └── state
+│
+└── shared
+```
+
+---
+
+# 🏗 Architecture
+
+The application follows a scalable feature-based architecture.
+
+- Core Module
+- Feature Module
+- Shared Module
+- Signal-based State Management
+- Service Layer
+- Reusable Components
+
+---
+
+# 📦 Installation
+
+Clone the repository
+
+```bash
+git clone <repository-url>
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run the application
+
+```bash
+ng serve
+```
+
+Navigate to
+
+```
+http://localhost:4200
+```
+
+---
+
+# 🧠 Architectural Decisions
+
+### Angular Signals
+
+Used for application state management because:
+
+- Lightweight
+- High Performance
+- Less Boilerplate
+- Automatic UI Updates
+
+---
+
+### IndexedDB
+
+Used instead of LocalStorage because:
+
+- Better Performance
+- Large Storage Capacity
+- Structured Data Storage
+- Persistent Offline Support
+
+---
+
+### RxJS
+
+Used for:
+
+- HTTP Requests
+- Streaming Responses
+- Reactive Programming
+
+---
+
+# 🌐 APIs
+
+DummyJSON APIs
+
+Users
+
+```
+https://dummyjson.com/users
+```
+
+Comments
+
+```
+https://dummyjson.com/comments
+```
+
+---
+
+# ⚡ Performance Optimizations
+
+- Angular Signals
+- Component Reusability
+- Auto Scroll
+- Streaming Rendering
+- Offline Storage
+- Lazy State Updates
+
+---
+
+# 📋 Assumptions
+
+- DummyJSON APIs are used as mock backend.
+- AI responses are simulated using Comments API.
+- No authentication is implemented.
+- Messages are stored locally.
+
+---
+
+# ⚠ Known Limitations
+
+- No real backend.
+- No WebSocket implementation.
+- AI responses are simulated.
+- No user authentication.
+
+---
+
+# 🚀 Future Improvements
+
+- WebSocket Integration
+- Real AI APIs (OpenAI)
+- Dark Mode
+- Infinite Scrolling
+- Virtual Scrolling
+- Keyboard Shortcuts
+- Unit Testing
+- End-to-End Testing
+- File Attachments
+- Emoji Picker
+- Push Notifications
+
+---
+
+# 👨‍💻 Author
+
+Ashutosh
+
+Frontend Developer
+
+Angular | TypeScript | RxJS | Signals

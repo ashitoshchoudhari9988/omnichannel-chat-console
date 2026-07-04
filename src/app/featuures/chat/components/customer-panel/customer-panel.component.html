@@ -1,0 +1,25 @@
+@if(chatStore.selectedConversation(); as conversation){
+
+<h2>Customer Details</h2>
+
+<img
+    [src]="conversation.customer.image"
+    width="80"
+    height="80">
+
+<h3>{{conversation.customer.name}}</h3>
+
+<p>{{conversation.customer.email}}</p>
+
+<p>{{conversation.customer.phone}}</p>
+
+<p>{{conversation.channel}}</p>
+
+}
+@else{
+
+<h2>Customer Details</h2>
+
+<p>Select a conversation</p>
+
+}
